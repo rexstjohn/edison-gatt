@@ -14,6 +14,7 @@
 		367E0DB11A1973EF007C90B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 367E0DB01A1973EF007C90B5 /* Images.xcassets */; };
 		367E0DB41A1973EF007C90B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 367E0DB21A1973EF007C90B5 /* LaunchScreen.xib */; };
 		367E0DC01A1973EF007C90B5 /* EdisonBLEConfigAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E0DBF1A1973EF007C90B5 /* EdisonBLEConfigAppTests.swift */; };
+		367E0DCA1A197ABA007C90B5 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 367E0DC91A197ABA007C90B5 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		367E0DB91A1973EF007C90B5 /* EdisonBLEConfigAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EdisonBLEConfigAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		367E0DBE1A1973EF007C90B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		367E0DBF1A1973EF007C90B5 /* EdisonBLEConfigAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdisonBLEConfigAppTests.swift; sourceTree = "<group>"; };
+		367E0DC91A197ABA007C90B5 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				367E0DCA1A197ABA007C90B5 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		367E0D991A1973EF007C90B5 = {
 			isa = PBXGroup;
 			children = (
+				367E0DC91A197ABA007C90B5 /* CoreBluetooth.framework */,
 				367E0DA41A1973EF007C90B5 /* EdisonBLEConfigApp */,
 				367E0DBC1A1973EF007C90B5 /* EdisonBLEConfigAppTests */,
 				367E0DA31A1973EF007C90B5 /* Products */,
@@ -411,6 +415,7 @@
 				367E0DC51A1973EF007C90B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		367E0DC61A1973EF007C90B5 /* Build configuration list for PBXNativeTarget "EdisonBLEConfigAppTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				367E0DC81A1973EF007C90B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

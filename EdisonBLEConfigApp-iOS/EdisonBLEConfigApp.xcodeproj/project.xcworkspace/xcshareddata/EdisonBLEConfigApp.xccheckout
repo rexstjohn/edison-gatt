@@ -14,7 +14,7 @@
 		<string>github.com:rexstjohn/IntelEdisonBLEGATT.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>EdisonBLEConfigApp/EdisonBLEConfigApp.xcodeproj</string>
+	<string>EdisonBLEConfigApp-iOS/EdisonBLEConfigApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>24E93FF1D2A9FE9E307FD22D95BEF4FC978D2582</key>
