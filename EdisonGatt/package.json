@@ -2,7 +2,7 @@
   "name": "edison-gatt",
   "version": "0.1.0",
   "description": "Intel Edison GATT Service using Bleno",
-  "main": "index.js",
+  "main": "main.js",
   "engines": {
     "node": ">=0.10"
   },
