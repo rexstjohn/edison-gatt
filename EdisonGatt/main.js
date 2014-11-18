@@ -11,7 +11,11 @@ var deviceInfoService = new EdisonDeviceInformationService();
 //
 bleno.on('stateChange', function(state) {
     console.log('on -> stateChange: ' + state);
-
+    
+    if(state === 'unsupported'){
+        console.log('If you rebooted you may need to unblock Bluetooth: rfkill unblock bluetooth');
+    }
+    
     if (state === 'poweredOn') {
         bleno.startAdvertising('EdisonConfiguration', [batteryService.uuid, deviceInfoService.uuid]);
     } else {

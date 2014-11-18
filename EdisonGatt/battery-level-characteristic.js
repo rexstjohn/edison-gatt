@@ -30,8 +30,8 @@ var BatteryLevelCharacteristic = function() {
 util.inherits(BatteryLevelCharacteristic, Characteristic);
 
 BatteryLevelCharacteristic.prototype.onReadRequest = function(offset, callback) {
-      var percent = 50;
-      callback(this.RESULT_SUCCESS, new Buffer([percent]));
+      
+    callback(this.RESULT_SUCCESS, new Buffer([98]));
 };
 
 module.exports = BatteryLevelCharacteristic;
