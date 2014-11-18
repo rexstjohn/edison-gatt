@@ -8,6 +8,12 @@ Step 3: http://rexstjohn.com/setting-up-intel-edison-with-intel-xdk/
 
 Once you have done that, you should be able to build and deploy the XDK project.
 
-You will also need this application to help scan for and check your BLE services hosted on Edison: https://itunes.apple.com/us/app/lightblue/id639944780?mt=12
+You will also need this application to help scan for and check your BLE services hosted on Edison:
+https://itunes.apple.com/us/app/bluetooth-smart-scanner/id509978131?mt=8
+
+I also have tried: https://itunes.apple.com/us/app/lightblue/id639944780?mt=12
 
 This requires Mac computer capable of BLE (Bluetooth 4.0), no reason you couldn't do the same with Windows using a similar BLE scanner diagnostic tool.
+
+Reference of default service UUIDs:https://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx
+
