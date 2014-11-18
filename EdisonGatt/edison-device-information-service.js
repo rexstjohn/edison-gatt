@@ -5,14 +5,14 @@
 var util = require('util'),
   bleno = require('bleno'),
   BlenoPrimaryService = bleno.PrimaryService,
-  EdisonDeviceInformationCharacteristic = require('./edison-device-information-characteristic');
+  EdisonDeviceManufacturerCharacteristic = require('./edison-device-manufacturer-characteristic');
 
 // Everything we want to be able to read / write about Edison using our paired mobile app.
 function EdisonDeviceInformationService() {
   EdisonDeviceInformationService.super_.call(this, {
-      uuid: '2A29',
+      uuid: '180A',
       characteristics: [
-          new EdisonDeviceInformationCharacteristic()
+          new EdisonDeviceManufacturerCharacteristic()
       ]
   });
 }

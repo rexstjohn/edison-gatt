@@ -15,10 +15,11 @@ var util = require('util'),
 * Reference:
 * https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.manufacturer_name_string.xml
 */
-var EdisonDeviceInformationCharacteristic = function() {
-  EdisonDeviceInformationCharacteristic.super_.call(this, {
+var EdisonDeviceManufacturerCharacteristic = function() {
+  EdisonDeviceManufacturerCharacteristic.super_.call(this, {
+      // Device Manufacturer
       uuid: '2A29',
-      properties: ['read', 'write'],
+      properties: ['read'],
       descriptors: [
         new Descriptor({
             uuid: '2901',
@@ -28,10 +29,10 @@ var EdisonDeviceInformationCharacteristic = function() {
   });
 };
 
-util.inherits(EdisonDeviceInformationCharacteristic, Characteristic);
+util.inherits(EdisonDeviceManufacturerCharacteristic, Characteristic);
 
-EdisonDeviceInformationCharacteristic.prototype.onReadRequest = function(offset, callback) {
+EdisonDeviceManufacturerCharacteristic.prototype.onReadRequest = function(offset, callback) {
     callback(this.RESULT_SUCCESS, "Edison_Name");
 };
 
-module.exports = EdisonDeviceInformationCharacteristic;
+module.exports = EdisonDeviceManufacturerCharacteristic;
