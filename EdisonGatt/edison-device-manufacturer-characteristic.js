@@ -22,17 +22,20 @@ var EdisonDeviceManufacturerCharacteristic = function() {
       properties: ['read'],
       descriptors: [
         new Descriptor({
-            uuid: '2901',
-            value: 'Intel Corporation'
-        })
-      ]
+        uuid: '2901',
+        value: 'Device Manufacturer'
+      })]
   });
 };
 
 util.inherits(EdisonDeviceManufacturerCharacteristic, Characteristic);
 
 EdisonDeviceManufacturerCharacteristic.prototype.onReadRequest = function(offset, callback) {
-    callback(this.RESULT_SUCCESS, "Edison_Name");
+ if (offset) {
+    callback(this.RESULT_ATTR_NOT_LONG, null);
+  } else {
+    callback(this.RESULT_SUCCESS, new Buffer('Intel Corporation'));
+  }
 };
 
 module.exports = EdisonDeviceManufacturerCharacteristic;

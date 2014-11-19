@@ -1,0 +1,12 @@
+#!/bin/sh
+systemctl stop bluetooth
+systemctl start bluetooth
+rfkill unblock bluetooth
+sleep 2
+hciconfig hci0 up
+sleep 2
+hciconfig hci0 noleadv
+sleep 2
+hciconfig hci0 leadv
+hciconfig -a hci0 name Edison
+# chmod +x to make this runnable

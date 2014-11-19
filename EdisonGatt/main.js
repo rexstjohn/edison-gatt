@@ -4,6 +4,7 @@ var bleno = require('bleno');
 EdisonBatteryService = require('./edison-battery-level-service');
 EdisonDeviceInformationService = require('./edison-device-information-service');
 
+
 // 
 var batteryService = new EdisonBatteryService();
 var deviceInfoService = new EdisonDeviceInformationService();
