@@ -15,26 +15,27 @@ var util = require('util'),
 * Reference:
 * https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.manufacturer_name_string.xml
 */
-var EdisonPasswordCharacteristic = function() {
-  EdisonPasswordCharacteristic.super_.call(this, {
+var EdisonDeviceStatusCharacteristic = function() {
+  EdisonDeviceStatusCharacteristic.super_.call(this, {
+      // Device Manufacturer
       uuid: '2A29',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
-        value: 'password'
+        value: 'Device Manufacturer'
       })]
   });
 };
 
-util.inherits(EdisonPasswordCharacteristic, Characteristic);
+util.inherits(EdisonDeviceStatusCharacteristic, Characteristic);
 
-EdisonPasswordCharacteristic.prototype.onReadRequest = function(offset, callback) {
+EdisonDeviceStatusCharacteristic.prototype.onReadRequest = function(offset, callback) {
  if (offset) {
     callback(this.RESULT_ATTR_NOT_LONG, null);
   } else {
-    callback(this.RESULT_SUCCESS, new Buffer('0'));
+    callback(this.RESULT_SUCCESS, new Buffer('supercool'));
   }
 };
 
-module.exports = EdisonPasswordCharacteristic;
+module.exports = EdisonDeviceStatusCharacteristic;
