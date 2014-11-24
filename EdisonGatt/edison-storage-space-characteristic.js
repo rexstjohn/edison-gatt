@@ -12,7 +12,7 @@ var util = require('util'),
 */
 var EdisonStorageSpaceCharacteristic = function() {
   EdisonStorageSpaceCharacteristic.super_.call(this, {
-      uuid: '2A19',
+      uuid: 'e602af1e-b2f2-46cb-beff-364d5d96eb76',
       properties: ['read'],
       descriptors: [
         new Descriptor({
@@ -21,7 +21,7 @@ var EdisonStorageSpaceCharacteristic = function() {
         }),
         new Descriptor({
             uuid: '2904',
-            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00 ]) // maybe 12 0xC unsigned 8 bit
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00 ]) 
         })
       ]
   });

@@ -17,13 +17,17 @@ var util = require('util'),
 */
 var EdisonSSIDCharacteristic = function() {
   EdisonSSIDCharacteristic.super_.call(this, {
-      uuid: '2A29',
+      uuid: '03f70ee0-0ef6-4c84-8d23-70af94b8a4f0',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
         value: 'SSID'
-      })]
+      }),
+        new Descriptor({
+            uuid: '2904',
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00])
+        })]
   });
 };
 

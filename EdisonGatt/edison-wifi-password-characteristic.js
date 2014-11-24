@@ -17,13 +17,17 @@ var util = require('util'),
 */
 var EdisonWiFiPasswordCharacteristic = function() {
   EdisonWiFiPasswordCharacteristic.super_.call(this, {
-      uuid: '2A29',
+      uuid: 'c250a5a6-9bfd-4b11-bc08-287b0016d4a9',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
         value: 'WiFi password'
-      })]
+      }),
+        new Descriptor({
+            uuid: '2904',
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00])
+        })]
   });
 };
 

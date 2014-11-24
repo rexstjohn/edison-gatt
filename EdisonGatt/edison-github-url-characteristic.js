@@ -1,7 +1,5 @@
 /**
-* Expose the device information of the Edison device
-*
-* Reference: https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.device_information.xml
+* GitHub URL
 */
 
 var util = require('util'),
@@ -11,20 +9,16 @@ var util = require('util'),
   Descriptor = bleno.Descriptor,
   Characteristic = bleno.Characteristic;
 
-/**
-* Reference:
-* https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.manufacturer_name_string.xml
-*/
 var EdisonGitHubURLCharacteristic = function() {
   EdisonGitHubURLCharacteristic.super_.call(this, {
-      // Device Manufacturer
-      uuid: '2A29',
+      uuid: '01010101010101010166616465524742',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
-        value: 'Device Manufacturer'
-      })]
+        value: 'GitHub URL'
+      })
+      ]
   });
 };
 
@@ -34,7 +28,7 @@ EdisonGitHubURLCharacteristic.prototype.onReadRequest = function(offset, callbac
  if (offset) {
     callback(this.RESULT_ATTR_NOT_LONG, null);
   } else {
-    callback(this.RESULT_SUCCESS, new Buffer('www.github.com/rexstjohn'));
+    callback(this.RESULT_SUCCESS, new Buffer(0));
   }
 };
 

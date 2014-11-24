@@ -3,12 +3,12 @@ var bleno = require('bleno');
 // Services
 EdisonBatteryService = require('./edison-battery-level-service');
 EdisonDeviceInformationService = require('./edison-device-information-service');
-EdisonGenericAttributeService = require('./edison-generic-attribute-service');
+EdisonCustomService = require('./edison-custom-service');
 
 // 
 var batteryService = new EdisonBatteryService();
 var deviceInfoService = new EdisonDeviceInformationService();
-var genericAttributeService = new EdisonGenericAttributeService();
+var customService = new EdisonCustomService();
 
 //
 bleno.on('stateChange', function(state) {
@@ -19,7 +19,7 @@ bleno.on('stateChange', function(state) {
     }
     
     if (state === 'poweredOn') {
-        bleno.startAdvertising('EdisonConfiguration', [batteryService.uuid, deviceInfoService.uuid,genericAttributeService.uuid]);
+        bleno.startAdvertising('EdisonConfiguration', [customService.uuid]);
     } else {
         bleno.stopAdvertising();
     }
@@ -30,6 +30,6 @@ bleno.on('advertisingStart', function(error) {
     console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
 
     if (!error) {
-        bleno.setServices([batteryService, deviceInfoService, genericAttributeService]);
+        bleno.setServices([customService]);
     }
 });

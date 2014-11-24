@@ -18,13 +18,17 @@ var util = require('util'),
 var EdisonDeviceStatusCharacteristic = function() {
   EdisonDeviceStatusCharacteristic.super_.call(this, {
       // Device Manufacturer
-      uuid: '2A29',
+      uuid: '142bed2a-22d6-42ec-b5e8-2518de05b307',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
         value: 'Device Manufacturer'
-      })]
+      }),
+        new Descriptor({
+            uuid: '2904',
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00])
+        })]
   });
 };
 

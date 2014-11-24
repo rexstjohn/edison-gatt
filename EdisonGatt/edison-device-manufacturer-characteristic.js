@@ -24,7 +24,11 @@ var EdisonDeviceManufacturerCharacteristic = function() {
         new Descriptor({
         uuid: '2901',
         value: 'Device Manufacturer'
-      })]
+      }),
+        new Descriptor({
+            uuid: '2904',
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00])
+        })]
   });
 };
 

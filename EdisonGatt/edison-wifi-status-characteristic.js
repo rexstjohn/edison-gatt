@@ -17,13 +17,17 @@ var util = require('util'),
 */
 var EdisonWiFiStatusCharacteristic = function() {
   EdisonWiFiStatusCharacteristic.super_.call(this, {
-      uuid: '2A29',
+      uuid: 'c8e433e4-f3f0-46b1-b1da-231c77188312',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
         value: 'WiFi Status'
-      })]
+      }),
+        new Descriptor({
+            uuid: '2904',
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00])
+        })]
   });
 };
 

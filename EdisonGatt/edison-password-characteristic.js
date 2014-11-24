@@ -17,13 +17,17 @@ var util = require('util'),
 */
 var EdisonPasswordCharacteristic = function() {
   EdisonPasswordCharacteristic.super_.call(this, {
-      uuid: '2A29',
+      uuid: '33a3fee1-41a4-4485-bb9f-83912c2e2457',
       properties: ['read'],
       descriptors: [
         new Descriptor({
         uuid: '2901',
         value: 'password'
-      })]
+      }),
+        new Descriptor({
+            uuid: '2904',
+            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00])
+        })]
   });
 };
 
