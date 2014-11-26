@@ -34,11 +34,11 @@ var EdisonWiFiStatusCharacteristic = function() {
 util.inherits(EdisonWiFiStatusCharacteristic, Characteristic);
 
 EdisonWiFiStatusCharacteristic.prototype.onReadRequest = function(offset, callback) {
- if (offset) {
-    callback(this.RESULT_ATTR_NOT_LONG, null);
-  } else {
-    callback(this.RESULT_SUCCESS, new Buffer('online'));
-  }
+    exec('df -h | grep /dev/root | awk \'{ print $4; }\'', function (error, stdout, stderr) {
+      var data = stdout.toString().replace(/(\r\n|\n|\r)/gm,"");
+      console.log("available storage: " + data);
+      callback(this.RESULT_SUCCESS, new Buffer([98]));
+    });
 };
 
 module.exports = EdisonWiFiStatusCharacteristic;

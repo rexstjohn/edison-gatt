@@ -1,5 +1,5 @@
 /**
-* Expose the device information of the Edison device
+* Expose the device manfucaturer information of the Edison device
 *
 * Reference: https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.device_information.xml
 */

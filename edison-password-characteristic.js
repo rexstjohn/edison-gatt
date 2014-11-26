@@ -22,7 +22,7 @@ var EdisonPasswordCharacteristic = function() {
       descriptors: [
         new Descriptor({
         uuid: '2901',
-        value: 'password'
+        value: 'Password'
       }),
         new Descriptor({
             uuid: '2904',

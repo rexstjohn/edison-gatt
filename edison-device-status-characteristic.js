@@ -1,7 +1,5 @@
 /**
-* Expose the device information of the Edison device
-*
-* Reference: https://developer.bluetooth.org/gatt/services/Pages/ServiceViewer.aspx?u=org.bluetooth.service.device_information.xml
+* A general status rading on the Edison
 */
 
 var util = require('util'),

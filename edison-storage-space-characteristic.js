@@ -28,7 +28,7 @@ EdisonStorageSpaceCharacteristic.prototype.onReadRequest = function(offset, call
     exec('df -h | grep /dev/root | awk \'{ print $4; }\'', function (error, stdout, stderr) {
       var data = stdout.toString().replace(/(\r\n|\n|\r)/gm,"");
       console.log("available storage: " + data);
-      callback(this.RESULT_SUCCESS, new Buffer([98]));
+      callback(this.RESULT_SUCCESS, new Buffer(data));
     });
 };
 
