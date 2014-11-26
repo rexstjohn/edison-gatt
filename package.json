@@ -19,6 +19,6 @@
     "command": "2.5.x"
   },
     "license": "MIT",
-    "repository": { "type": "git", "url": "https://github.com/rexstjohn/rexy.js.git" }, 
+    "repository": { "type": "git", "url": "https://github.com/rexstjohn/edison-ble.js.git" }, 
     "devDependencies": { "should": ">= 0.0.1" },
 }
