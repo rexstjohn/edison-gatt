@@ -1,3 +1,6 @@
+/**
+* This helps keep BLE up and running via shell scripts and bash commands, it will even help setup Edison for BLE development.
+*/
 var util = require('util'),
   os = require('os'),
   sys = require('sys'),
