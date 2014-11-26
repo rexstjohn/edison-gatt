@@ -1,0 +1,24 @@
+{
+  "name": "edison-gatt",
+  "version": "0.1.0",
+  "description": "Intel Edison GATT Service using Bleno",
+  "main": "main.js",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "author": {
+    "name": "Rex St John",
+    "url" : "https://github.com/rexstjohn"
+  },
+  "dependencies": {
+    "bleno": ">0.1.4",
+    "command": "2.5.x"
+  },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/rexstjohn/rexy.js.git" }, 
+    "devDependencies": { "should": ">= 0.0.1" },
+}
