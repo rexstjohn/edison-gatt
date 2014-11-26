@@ -15,7 +15,7 @@
     "url" : "https://github.com/rexstjohn"
   },
   "dependencies": {
-    "bleno": ">0.1.4",
+    "bleno": "*",
     "commander": "2.5.x",
     "promptly": "0.2.x",
     "node-uuid": "*"

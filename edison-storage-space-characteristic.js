@@ -11,6 +11,7 @@ var EdisonStorageSpaceCharacteristic = function() {
   EdisonStorageSpaceCharacteristic.super_.call(this, {
       uuid: 'e602af1e-b2f2-46cb-beff-364d5d96eb76',
       properties: ['read'],
+      value: new Buffer('500.0M','utf8'),
       descriptors: [
         new Descriptor({
             uuid: '2901',
@@ -27,7 +28,7 @@ EdisonStorageSpaceCharacteristic.prototype.onReadRequest = function(offset, call
     exec('df -h | grep /dev/root | awk \'{ print $4; }\'', function (error, stdout, stderr) {
       var data = stdout.toString().replace(/(\r\n|\n|\r)/gm,"");
       console.log("available storage: " + data);
-      callback(this.RESULT_SUCCESS, data);
+      callback(this.RESULT_SUCCESS, new Buffer([98]));
     });
 };
 
