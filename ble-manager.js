@@ -13,13 +13,6 @@ var util = require('util'),
 exports.setupBLE = function() {
     console.log('Setting Up BLE');
     var cspr = spawn('sh', ["setupble.sh"], { stdio: 'inherit' });
-    cspr.stdout.setEncoding('utf8');
-    cspr.stdout.on('data', function(data) {
-      var str = data.toString(), lines = str.split(/(\r?\n)/g);
-      for (var i=0; i<lines.length; i++) {
-          console.log(str[i]);
-      }
-    });
 };
 
 /**
@@ -37,11 +30,4 @@ exports.unblockBLE = function() {
 exports.restartBLE = function() { 
     console.log('Restarting BLE');
     var cspr = spawn('sh', ["restartble.sh"], { stdio: 'inherit' });
-    cspr.stdout.setEncoding('utf8');
-    cspr.stdout.on('data', function(data) {
-      var str = data.toString(), lines = str.split(/(\r?\n)/g);
-      for (var i=0; i<lines.length; i++) {
-          console.log(str[i]);
-      }
-    });
 };

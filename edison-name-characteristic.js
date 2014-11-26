@@ -1,7 +1,6 @@
 /**
 * The given name of this Edison
 */
-
 var util = require('util'),
   exec = require('child_process').exec,
   bleno = require('bleno'),
@@ -18,7 +17,7 @@ var EdisonDeviceNameCharacteristic = function() {
   EdisonDeviceNameCharacteristic.super_.call(this, {
       uuid: 'f6fd0aa0-c73f-4441-9c98-a362bd0aa973',
       properties: ['read'],
-      value: new Buffer(edisonName,'utf8'),
+      value: edisonName,
       descriptors: [
         new Descriptor({
         uuid: '2901',

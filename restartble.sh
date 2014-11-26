@@ -1,7 +1,8 @@
 #!/bin/sh
-# killall bluetoothd
-systemctl stop bluetooth
-systemctl start bluetooth
+killall node
+killall bluetoothd
+#systemctl stop bluetooth
+#systemctl start bluetooth
 rfkill unblock bluetooth
 sleep 2
 hciconfig hci0 up

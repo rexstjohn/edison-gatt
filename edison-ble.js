@@ -7,15 +7,11 @@ commander = require('commander'),
 promptly = require('promptly');
 
 // Services
-EdisonBatteryService = require('./edison-battery-level-service'),
-EdisonDeviceInformationService = require('./edison-device-information-service'),
 EdisonCustomService = require('./edison-custom-service'),
 EdisonBLEManager = require('./ble-manager');
 
 // 
-var batteryService = new EdisonBatteryService(),
-    deviceInfoService = new EdisonDeviceInformationService(),
-    customService = new EdisonCustomService();
+var customService = new EdisonCustomService();
 
 //
 bleno.on('stateChange', function(state) {
@@ -26,7 +22,7 @@ bleno.on('stateChange', function(state) {
         promptly.choose('Do you want to (a) unblock BLE or (b) configure this Edison for BLE development? ', ['a', 'b'], function (err, value){
             console.log('You Answered:', value);
             if(value === 'a'){
-                EdisonBLEManager.unblockBLE();
+                EdisonBLEManager.restartBLE();
             } else if (value === 'b') {
                 EdisonBLEManager.setupBLE();
             } 
@@ -56,7 +52,7 @@ bleno.on('advertisingStart', function(error) {
     console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
 
     if (!error) {
-        bleno.setServices([customService, deviceInfoService, batteryService]);
+        bleno.setServices([customService]);
     }
 });
 
