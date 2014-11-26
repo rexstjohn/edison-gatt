@@ -1,7 +1,6 @@
 var util = require('util'),
-  os = require('os'),
-  exec = require('child_process').exec,
   bleno = require('bleno'),
+  disk = require('diskusage'),
   Descriptor = bleno.Descriptor,
   Characteristic = bleno.Characteristic;
 
@@ -21,7 +20,7 @@ var EdisonStorageSpaceCharacteristic = function() {
         }),
         new Descriptor({
             uuid: '2904',
-            value: new Buffer([0x04, 0x01, 0x27, 0xAD, 0x01, 0x00, 0x00 ]) 
+            value: new Buffer(30) 
         })
       ]
   });
@@ -30,8 +29,17 @@ var EdisonStorageSpaceCharacteristic = function() {
 util.inherits(EdisonStorageSpaceCharacteristic, Characteristic);
 
 EdisonStorageSpaceCharacteristic.prototype.onReadRequest = function(offset, callback) {
-      
-    callback(this.RESULT_SUCCESS, new Buffer([98]));
+    
+     // Get the free disk space and stick it in a buffer.
+     if (offset) {
+        callback(this.RESULT_ATTR_NOT_LONG, null);
+      } else {
+        disk.check('/', function(err, info) {
+            console.log(info.free);
+            console.log(info.total);
+            callback(this.RESULT_SUCCESS, new Buffer(info.free / 1000));
+        });
+      }
 };
 
 module.exports = EdisonStorageSpaceCharacteristic;

@@ -8,13 +8,15 @@ var util = require('util'),
   StorageSpaceCharacteristics = require('./edison-storage-space-characteristic'),
   WifiPasswordCharacteristics = require('./edison-wifi-password-characteristic'),
   WifiStatusCharacteristics = require('./edison-wifi-status-characteristic'),
-  DeviceStatusCharacteristics = require('./edison-device-status-characteristic');
+  DeviceStatusCharacteristics = require('./edison-device-status-characteristic'),
+  EdisonDeviceNameCharacteristic = require('./edison-name-characteristic');
 
 // Everything we want to be able to read / write about Edison using our paired mobile app.
 function EdisonCustomService() {
   EdisonCustomService.super_.call(this, {
       uuid: uuid.v4(),
       characteristics: [
+          new EdisonDeviceNameCharacteristic(),
           new GitHubURLCharacteristics(),
           new SSIDCharacteristics(),
           new PasswordCharacteristics(),

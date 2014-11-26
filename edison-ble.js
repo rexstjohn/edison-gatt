@@ -29,9 +29,7 @@ bleno.on('stateChange', function(state) {
                 EdisonBLEManager.unblockBLE();
             } else if (value === 'b') {
                 EdisonBLEManager.setupBLE();
-            } else {
-                return;
-            }
+            } 
         });
     }
     
@@ -42,22 +40,34 @@ bleno.on('stateChange', function(state) {
     
     // Allow users to start BLE if advertising is turned off.
     if(state === 'poweredOff') {
-        promptly.choose('Turn on BLE?', ['y', 'n'], function (err, value) {
+        promptly.choose('Turn on BLE? (y/n)', ['y', 'n'], function (err, value) {
             console.log('You Answered:', value);
             if(value === 'y'){
                 EdisonBLEManager.restartBLE();
-            } 
+            } else {
+                bleno.stopAdvertising();
+            }
         });
-    } else {
-       // bleno.stopAdvertising();
-    }
+    } 
 });
 
-// 
+// Catch Advertising Start
 bleno.on('advertisingStart', function(error) {
     console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
 
     if (!error) {
         bleno.setServices([customService, deviceInfoService, batteryService]);
     }
+});
+
+// Catch Advertising Stop
+bleno.on('advertisingStop', function(error) {
+    console.log('on -> advertisingStop: ' + (error ? 'error ' + error : 'success'));
+    
+    promptly.choose('Restart Advertising? (y/n)', ['y', 'n'], function (err, value) {
+        console.log('You Answered:', value);
+        if(value === 'y'){
+            bleno.startAdvertising('EdisonConfiguration', [customService.uuid]);
+        } 
+    });
 });

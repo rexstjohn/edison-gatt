@@ -13,6 +13,7 @@ var EdisonGitHubURLCharacteristic = function() {
   EdisonGitHubURLCharacteristic.super_.call(this, {
       uuid: '01010101010101010166616465524742',
       properties: ['read'],
+      value: new Buffer('https://github.com/rexstjohn/edison-ble','utf8'),
       descriptors: [
         new Descriptor({
         uuid: '2901',
@@ -23,13 +24,5 @@ var EdisonGitHubURLCharacteristic = function() {
 };
 
 util.inherits(EdisonGitHubURLCharacteristic, Characteristic);
-
-EdisonGitHubURLCharacteristic.prototype.onReadRequest = function(offset, callback) {
- if (offset) {
-    callback(this.RESULT_ATTR_NOT_LONG, null);
-  } else {
-    callback(this.RESULT_SUCCESS, new Buffer(0));
-  }
-};
 
 module.exports = EdisonGitHubURLCharacteristic;
