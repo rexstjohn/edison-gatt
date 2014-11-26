@@ -1,8 +1,8 @@
 {
-  "name": "edison-gatt",
+  "name": "edison-ble",
   "version": "0.1.0",
   "description": "Intel Edison GATT Service using Bleno",
-  "main": "main.js",
+  "edison-ble": "edison-ble.js",
   "engines": {
     "node": ">=0.10"
   },
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "bleno": ">0.1.4",
-    "command": "2.5.x"
+    "commander": "2.5.x"
   },
     "license": "MIT",
     "repository": { "type": "git", "url": "https://github.com/rexstjohn/edison-ble.js.git" }, 
