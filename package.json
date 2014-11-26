@@ -17,7 +17,8 @@
   "dependencies": {
     "bleno": ">0.1.4",
     "commander": "2.5.x",
-    "promptly": "0.2.x"
+    "promptly": "0.2.x",
+    "node-uuid": "*"
   },
   "license": "MIT",
   "repository": { "type": "git", "url": "https://github.com/rexstjohn/edison-ble.js.git" },  

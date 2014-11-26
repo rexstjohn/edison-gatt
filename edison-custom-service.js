@@ -1,5 +1,6 @@
 var util = require('util'),
   bleno = require('bleno'),
+  uuid = require('node-uuid'),
   BlenoPrimaryService = bleno.PrimaryService,
   GitHubURLCharacteristics = require('./edison-github-url-characteristic'),
   SSIDCharacteristics = require('./edison-ssid-characteristic'),
@@ -12,7 +13,7 @@ var util = require('util'),
 // Everything we want to be able to read / write about Edison using our paired mobile app.
 function EdisonCustomService() {
   EdisonCustomService.super_.call(this, {
-      uuid: '01010101010101010101010101010101',
+      uuid: uuid.v4(),
       characteristics: [
           new GitHubURLCharacteristics(),
           new SSIDCharacteristics(),

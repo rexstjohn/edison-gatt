@@ -2,20 +2,20 @@
 * Welcome to my open source Intel Edison BLE attribute server. It comes with several helpful utilities
 * which can help keep Edison's BLE services up and running.
 */
-var bleno = require('bleno');
-var commander = require('commander');
-var promptly = require('promptly');
+var bleno = require('bleno'),
+commander = require('commander'),
+promptly = require('promptly');
 
 // Services
-EdisonBatteryService = require('./edison-battery-level-service');
-EdisonDeviceInformationService = require('./edison-device-information-service');
-EdisonCustomService = require('./edison-custom-service');
+EdisonBatteryService = require('./edison-battery-level-service'),
+EdisonDeviceInformationService = require('./edison-device-information-service'),
+EdisonCustomService = require('./edison-custom-service'),
 EdisonBLEManager = require('./ble-manager');
 
 // 
-var batteryService = new EdisonBatteryService();
-var deviceInfoService = new EdisonDeviceInformationService();
-var customService = new EdisonCustomService();
+var batteryService = new EdisonBatteryService(),
+    deviceInfoService = new EdisonDeviceInformationService(),
+    customService = new EdisonCustomService();
 
 //
 bleno.on('stateChange', function(state) {
@@ -58,6 +58,6 @@ bleno.on('advertisingStart', function(error) {
     console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
 
     if (!error) {
-        bleno.setServices([customService]);
+        bleno.setServices([customService, deviceInfoService, batteryService]);
     }
 });
