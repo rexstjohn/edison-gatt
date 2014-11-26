@@ -1,11 +1,19 @@
-IntelEdisonBLEGATT
-==================
+This repo is my implementation of the following vision: http://rexstjohn.com/how-i-want-to-develop-code-for-intel-edison/
 
-This is an experimental build system for Intel Edison which relies on BLE and a paired mobile application. Developers can configure 
-their Edison's Wi-Fi settings and set a GitHub repo via a mobile application. Then, they can deploy code to the GitHub repo and build /
-install / run the code on their Edison by pressing a "deploy" button on their phone.
+Step 1: http://rexstjohn.com/getting-wi-fi-with-intel-edison/
 
-There are two components to this project:
+Step 2: http://rexstjohn.com/configure-intel-edison-for-bluetooth-le-smart-development/#more-2958
 
-1.) A BLE GATT profile for Intel Edison and build system using GitHub
-2.) A remote control app to configure Edison's settings via BLE
+Step 3: http://rexstjohn.com/setting-up-intel-edison-with-intel-xdk/
+
+Once you have done that, you should be able to build and deploy the XDK project.
+
+You will also need this application to help scan for and check your BLE services hosted on Edison:
+https://itunes.apple.com/us/app/bluetooth-smart-scanner/id509978131?mt=8
+
+I also have tried: https://itunes.apple.com/us/app/lightblue/id639944780?mt=12
+
+This requires Mac computer capable of BLE (Bluetooth 4.0), no reason you couldn't do the same with Windows using a similar BLE scanner diagnostic tool.
+
+Reference of default service UUIDs:https://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx
+

@@ -1,4 +1,5 @@
 var bleno = require('bleno');
+var commander = require('commander');
 
 // Services
 EdisonBatteryService = require('./edison-battery-level-service');

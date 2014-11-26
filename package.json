@@ -15,6 +15,10 @@
     "url" : "https://github.com/rexstjohn"
   },
   "dependencies": {
-    "bleno": ">0.1.4"
-  }
+    "bleno": ">0.1.4",
+    "command": "2.5.x"
+  },
+    "license": "MIT",
+    "repository": { "type": "git", "url": "https://github.com/rexstjohn/rexy.js.git" }, 
+    "devDependencies": { "should": ">= 0.0.1" },
 }
